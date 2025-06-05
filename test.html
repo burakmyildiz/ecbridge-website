@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Architecture Buttons</title>
+    <style>
+        .arch-controls {
+            margin: 20px;
+        }
+        .control-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .control-btn.active {
+            background: #627EEA;
+        }
+        #bridge-universe {
+            width: 500px;
+            height: 300px;
+            border: 2px solid #ccc;
+            margin: 20px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="arch-controls">
+        <button class="control-btn active" data-view="overview">Overview</button>
+        <button class="control-btn" data-view="flow">Data Flow</button>
+        <button class="control-btn" data-view="security">Security</button>
+    </div>
+    
+    <div id="bridge-universe">
+        <p>Bridge Universe Container</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const archControlBtns = document.querySelectorAll('.arch-controls .control-btn');
+            console.log('Found buttons:', archControlBtns.length);
+            
+            archControlBtns.forEach((btn, index) => {
+                console.log(`Button ${index}:`, btn.getAttribute('data-view'));
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Button clicked:', this.getAttribute('data-view'));
+                    alert('Button clicked: ' + this.getAttribute('data-view'));
+                    
+                    archControlBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const view = this.getAttribute('data-view');
+                    testFunction(view);
+                });
+            });
+            
+            function testFunction(view) {
+                console.log('testFunction called with:', view);
+                const universe = document.getElementById('bridge-universe');
+                
+                switch(view) {
+                    case 'flow':
+                        universe.style.border = '3px solid green';
+                        universe.innerHTML = '<p>DATA FLOW MODE ACTIVE</p>';
+                        break;
+                    case 'security':
+                        universe.style.border = '3px solid red';
+                        universe.innerHTML = '<p>SECURITY MODE ACTIVE</p>';
+                        break;
+                    default:
+                        universe.style.border = '2px solid #ccc';
+                        universe.innerHTML = '<p>OVERVIEW MODE ACTIVE</p>';
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

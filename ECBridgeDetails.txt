@@ -1,0 +1,71 @@
+Sure, here’s a detailed project summary for your ECBridge project. Let me know if you want it reformatted for a report, poster, or presentation.
+ECBridge Project Summary
+
+Project Title: ECBridge – Ethereum to Citrea Bridge
+Team Members: Burak Muammer Yıldız, Tufan Özkan
+Supervisor: Dr. Ayşe Nur Birtürk
+Overview
+
+ECBridge is a decentralized, trust-minimized bridge designed to enable secure and efficient cross-chain communication between Ethereum and Citrea, a Bitcoin rollup that leverages zero-knowledge proofs and validity rollups. The bridge facilitates interoperability between these two distinct blockchain ecosystems, allowing users to move assets or proofs across chains in a verifiable and decentralized way.
+
+The project focuses on light client verification and proof relaying, essential components for trustless bridging mechanisms. By verifying Ethereum state inside Citrea or vice versa, users can prove asset locks or other on-chain state transitions without relying on centralized validators or custodians.
+Core Components
+
+    Ethereum Light Client (ELC):
+    A component that verifies Ethereum block headers and their validity using finality proofs (e.g., sync committee updates under the Proof-of-Stake system). Designed to run efficiently within Citrea’s zero-knowledge VM environment.
+
+    Citrea Proof Relay (Future Work):
+    A proposed mechanism to relay Citrea state commitments back to Ethereum for bidirectional communication. This component was conceptually designed but not fully implemented during the project due to constraints.
+
+    Bridge Smart Contracts:
+    Solidity smart contracts that manage the asset lock/unlock logic, act as escrow, and verify cryptographic proofs submitted from Citrea via the light client. They ensure that a user locking assets on Ethereum can unlock equivalent assets on Citrea and vice versa.
+
+    Frontend Dashboard:
+    A React-based frontend that allows users to interact with the bridge, initiate transfers, and visualize the proof-verification process. The UI includes wallet connectivity (e.g., MetaMask), status tracking, and transaction history.
+
+Technologies Used
+
+    Ethereum (Geth, Solidity, Web3.js)
+
+    Zero-Knowledge Proof Systems (SNARKs/STARKs)
+
+    Citrea (experimental zk-rollup stack on Bitcoin)
+
+    TypeScript & React (Frontend)
+
+    Hardhat (Development Framework)
+
+    Rust (Planned for ZK light client verification in future iterations)
+
+Motivation & Impact
+
+The current blockchain ecosystem is fragmented, and most existing bridges are prone to centralization or attacks. ECBridge addresses these challenges by utilizing cryptographic proofs and on-chain light client verification to ensure a non-custodial and censorship-resistant solution for interoperability. Bridging Ethereum’s smart contract capabilities with Bitcoin’s security model via Citrea opens up significant possibilities in decentralized finance (DeFi), cross-chain governance, and Bitcoin-native applications.
+Challenges Faced
+
+    Encoding Ethereum consensus logic efficiently within zk-proof systems
+
+    Lack of mature developer tooling for Citrea
+
+    Synchronizing between Ethereum’s and Bitcoin’s drastically different block timings and data availability models
+
+    Avoiding trusted third-party relayers
+
+Results and Evaluation
+
+    Implemented an Ethereum light client verifier that can be embedded into Citrea’s proving stack.
+
+    Developed frontend UI with fully integrated wallet interactions.
+
+    Deployed proof-of-concept smart contracts on an Ethereum testnet.
+
+    Verified headers and sample Merkle proofs off-chain, and laid out a roadmap for recursive verification in Citrea.
+
+    Integrated Citrea proving environment (e.g., integration with RISC Zero or SP1 zkVM)
+
+    Built full bidirectional bridge with SPV proofs from Bitcoin side
+
+    Made optimizations for gas usage in on-chain Ethereum verification
+
+    Security audits and bug bounty programs
+
+

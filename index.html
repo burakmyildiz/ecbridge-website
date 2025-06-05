@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECBridge - Ethereum to Citrea Bridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 5 L40 15 L40 35 L25 45 L10 35 L10 15 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M25 15 L32 20 L32 30 L25 35 L18 30 L18 20 Z" fill="currentColor" opacity="0.8"/>
+                    </svg>
+                </div>
+                <span>ECBridge</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="grid-pattern"></div>
+            <div class="gradient-orb gradient-orb-1"></div>
+            <div class="gradient-orb gradient-orb-2"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">ECBridge</span>
+                <br>
+                <span class="subtitle">Trustless Cross-Chain Communication</span>
+            </h1>
+            <p class="hero-description">
+                A decentralized bridge connecting Ethereum and Citrea through zero-knowledge proofs, 
+                enabling secure and efficient cross-chain transfers without intermediaries.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">Zero</div>
+                    <div class="stat-label">Trust Assumptions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15min</div>
+                    <div class="stat-label">Finality Time</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Decentralized</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#architecture" class="btn btn-primary">Explore Architecture</a>
+                <a href="#demo" class="btn btn-secondary">View Demo</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="overview">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            
+            <!-- Interactive Hero Banner -->
+            <div class="overview-hero">
+                <div class="overview-hero-content">
+                    <h3 class="overview-tagline">Bridging the Future of Decentralized Finance</h3>
+                    <p class="lead-text">
+                        ECBridge revolutionizes blockchain interoperability by creating a trustless bridge between 
+                        Ethereum and Citrea using cutting-edge zero-knowledge proof technology.
+                    </p>
+                    <div class="overview-metrics">
+                        <div class="metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="metric-content">
+                                <span class="metric-value">100%</span>
+                                <span class="metric-label">Trustless</span>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="metric-content">
+                                <span class="metric-value">~15min</span>
+                                <span class="metric-label">Finality</span>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="metric-content">
+                                <span class="metric-value">ZK-Proof</span>
+                                <span class="metric-label">Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-visual">
+                    <div class="bridge-animation">
+                        <div class="chain-node ethereum-node">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='none'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23627EEA'/%3E%3Cpath fill='white' d='M16 4v8.9l7.5 3.3L16 4z M16 4l-7.5 12.2L16 12.9V4zm0 17.7v6.3l7.5-10.6L16 21.7zm0 0L8.5 17.4 16 27.9v-6.2zm0-4.8l7.5-3.3L16 10v6.9zm-7.5-3.3L16 10v6.9l-7.5-3.3z'/%3E%3C/g%3E%3C/svg%3E" alt="Ethereum">
+                            <span>Ethereum</span>
+                        </div>
+                        <div class="bridge-connection">
+                            <div class="data-flow"></div>
+                            <div class="bridge-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                        </div>
+                        <div class="chain-node citrea-node">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FF6B00'/%3E%3Cpath fill='white' d='M16 8c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 2c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6z'/%3E%3C/svg%3E" alt="Citrea">
+                            <span>Citrea</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem & Solution Cards -->
+            <div class="overview-cards">
+                <div class="problem-solution-container">
+                    <div class="problem-card">
+                        <div class="card-header">
+                            <div class="card-icon problem-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>The Challenge</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="issue-list">
+                                <div class="issue-item">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Centralized validators create single points of failure</span>
+                                </div>
+                                <div class="issue-item">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Multi-sig schemes require trust in committee members</span>
+                                </div>
+                                <div class="issue-item">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Existing bridges vulnerable to 51% attacks</span>
+                                </div>
+                                <div class="issue-item">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>High costs and slow transaction finality</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <div class="card-header">
+                            <div class="card-icon solution-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Our Solution</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="solution-list">
+                                <div class="solution-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Zero-knowledge proofs eliminate trust requirements</span>
+                                </div>
+                                <div class="solution-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>SP1-Helios ensures cryptographic verification</span>
+                                </div>
+                                <div class="solution-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Immune to traditional bridge attack vectors</span>
+                                </div>
+                                <div class="solution-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Fast finality with Ethereum's PoS consensus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features Timeline -->
+            <div class="timeline-section">
+                <h3 class="timeline-title">Development Journey</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Research Phase</h4>
+                            <p>Analyzed existing bridge architectures and identified security vulnerabilities</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Architecture Design</h4>
+                            <p>Developed novel approach using SP1-Helios light client technology</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Implementation</h4>
+                            <p>Built smart contracts, relayer service, and user interface</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Testing & Validation</h4>
+                            <p>Deployed on testnet and validated proof generation system</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Info Grid -->
+            <div class="project-info-grid">
+                <div class="info-box team-info">
+                    <div class="info-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Project Team</h3>
+                    </div>
+                    <div class="team-details">
+                        <div class="team-member-info">
+                            <i class="fas fa-user-circle"></i>
+                            <div>
+                                <strong>Burak Muammer Yıldız</strong>
+                                <span>Lead Developer</span>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <i class="fas fa-user-circle"></i>
+                            <div>
+                                <strong>Tufan Özkan</strong>
+                                <span>Lead Developer</span>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <i class="fas fa-user-graduate"></i>
+                            <div>
+                                <strong>Dr. Ayşe Nur Birtürk</strong>
+                                <span>Supervisor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-box innovation-info">
+                    <div class="info-header">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Key Innovations</h3>
+                    </div>
+                    <div class="innovation-list">
+                        <div class="innovation-item">
+                            <span class="innovation-number">01</span>
+                            <p>First bridge combining Ethereum and Bitcoin security models</p>
+                        </div>
+                        <div class="innovation-item">
+                            <span class="innovation-number">02</span>
+                            <p>Zero-knowledge proof verification without intermediaries</p>
+                        </div>
+                        <div class="innovation-item">
+                            <span class="innovation-number">03</span>
+                            <p>Citrea integration for Bitcoin-backed security</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-box institution-info">
+                    <div class="info-header">
+                        <i class="fas fa-university"></i>
+                        <h3>Institution</h3>
+                    </div>
+                    <div class="institution-details">
+                        <h4>METU Computer Engineering</h4>
+                        <p>2025 Graduation Project</p>
+                        <div class="institution-badge">
+                            <i class="fas fa-heart"></i>
+                            <span>Built with Passion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            
+            <!-- Architecture Overview -->
+            <div class="arch-overview">
+                <p class="arch-description">
+                    Experience ECBridge's revolutionary architecture through our interactive 3D visualization
+                </p>
+            </div>
+
+            <!-- 3D Interactive Visualization -->
+            <div class="architecture-3d-container">
+                <div class="bridge-universe" id="bridge-universe">
+                    <!-- Central Bridge Core -->
+                    <div class="bridge-core">
+                        <div class="core-shield shield-1"></div>
+                        <div class="core-shield shield-2"></div>
+                        <div class="core-shield shield-3"></div>
+                        <div class="energy-pulse"></div>
+                        <div class="core-center">
+                            <i class="fas fa-link"></i>
+                            <span>ECBridge</span>
+                        </div>
+                    </div>
+
+                    <!-- Ethereum Node -->
+                    <div class="chain-node ethereum-3d" data-chain="ethereum">
+                        <div class="node-glow ethereum-glow"></div>
+                        <div class="node-core">
+                            <div class="node-icon">
+                                <i class="fab fa-ethereum"></i>
+                            </div>
+                            <div class="node-label">Ethereum</div>
+                        </div>
+                        <div class="node-components">
+                            <div class="hex-component" data-component="bridge-eth">
+                                <div class="hex-shape">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <span>Bridge Contract</span>
+                            </div>
+                            <div class="hex-component" data-component="token-mgmt">
+                                <div class="hex-shape">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <span>Token Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Citrea Node -->
+                    <div class="chain-node citrea-3d" data-chain="citrea">
+                        <div class="node-glow citrea-glow"></div>
+                        <div class="node-core">
+                            <div class="node-icon">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <div class="node-label">Citrea</div>
+                        </div>
+                        <div class="node-components">
+                            <div class="hex-component" data-component="bridge-citrea">
+                                <div class="hex-shape">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <span>Bridge Contract</span>
+                            </div>
+                            <div class="hex-component" data-component="token-registry">
+                                <div class="hex-shape">
+                                    <i class="fas fa-list"></i>
+                                </div>
+                                <span>Token Registry</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orbiting Technologies -->
+                    <div class="tech-orbit orbit-1">
+                        <div class="tech-satellite" data-tech="sp1-helios">
+                            <div class="satellite-glow"></div>
+                            <i class="fas fa-microchip"></i>
+                            <span>SP1-Helios</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-orbit orbit-2">
+                        <div class="tech-satellite" data-tech="relayer">
+                            <div class="satellite-glow"></div>
+                            <i class="fas fa-server"></i>
+                            <span>Relayer</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-orbit orbit-3">
+                        <div class="tech-satellite" data-tech="state-mgmt">
+                            <div class="satellite-glow"></div>
+                            <i class="fas fa-database"></i>
+                            <span>State Management</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Flow Particles -->
+                    <div class="data-particles" id="data-particles"></div>
+
+                    <!-- Connection Lines -->
+                    <div class="connection-line line-1"></div>
+                    <div class="connection-line line-2"></div>
+                </div>
+
+                <!-- Control Panel -->
+                <div class="arch-controls">
+                    <button class="control-btn active" data-view="overview">
+                        <i class="fas fa-eye"></i>
+                        Overview
+                    </button>
+                    <button class="control-btn" data-view="flow">
+                        <i class="fas fa-exchange-alt"></i>
+                        Data Flow
+                    </button>
+                    <button class="control-btn" data-view="security">
+                        <i class="fas fa-shield-alt"></i>
+                        Security
+                    </button>
+                </div>
+            </div>
+
+            <!-- Performance Metrics Visualization -->
+            <div class="performance-metrics">
+                <h3 class="metrics-title">Live Performance Metrics</h3>
+                <div class="metrics-grid">
+                    <div class="metric-ring" data-metric="uptime">
+                        <div class="ring-progress" data-progress="99.9">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" class="ring-bg"></circle>
+                                <circle cx="50" cy="50" r="45" class="ring-fill"></circle>
+                            </svg>
+                            <div class="ring-content">
+                                <span class="ring-value">99.9%</span>
+                                <span class="ring-label">Uptime</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-ring" data-metric="finality">
+                        <div class="ring-progress" data-progress="85">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" class="ring-bg"></circle>
+                                <circle cx="50" cy="50" r="45" class="ring-fill"></circle>
+                            </svg>
+                            <div class="ring-content">
+                                <span class="ring-value">~15min</span>
+                                <span class="ring-label">Finality</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-ring" data-metric="tps">
+                        <div class="ring-progress" data-progress="75">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" class="ring-bg"></circle>
+                                <circle cx="50" cy="50" r="45" class="ring-fill"></circle>
+                            </svg>
+                            <div class="ring-content">
+                                <span class="ring-value">1000+</span>
+                                <span class="ring-label">TPS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Component Modal -->
+            <div class="component-modal" id="component-modal">
+                <div class="modal-backdrop"></div>
+                <div class="modal-content">
+                    <button class="modal-close">×</button>
+                    <div class="modal-header">
+                        <div class="modal-icon"></div>
+                        <h3 class="modal-title"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-description"></div>
+                        <div class="modal-specs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Core Features</h2>
+            
+            <!-- Interactive Features Universe -->
+            <div class="features-universe-container">
+                <h3 class="universe-title">Experience the Future of Cross-Chain Technology</h3>
+                <div class="features-universe" id="features-universe">
+                    <!-- Central Innovation Core -->
+                    <div class="innovation-core">
+                        <div class="core-rings">
+                            <div class="ring ring-1"></div>
+                            <div class="ring ring-2"></div>
+                            <div class="ring ring-3"></div>
+                        </div>
+                        <div class="core-center">
+                            <i class="fas fa-rocket"></i>
+                            <span>ECBridge</span>
+                        </div>
+                        <div class="energy-waves"></div>
+                    </div>
+
+                    <!-- Floating Feature Orbs -->
+                    <div class="feature-orb security-orb" data-feature="security">
+                        <div class="orb-glow security-glow"></div>
+                        <div class="orb-core">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security</span>
+                        </div>
+                        <div class="orb-details">
+                            <div class="detail-point">Zero-Knowledge Proofs</div>
+                            <div class="detail-point">Non-Custodial Design</div>
+                            <div class="detail-point">Attack Resistance</div>
+                        </div>
+                    </div>
+
+                    <div class="feature-orb performance-orb" data-feature="performance">
+                        <div class="orb-glow performance-glow"></div>
+                        <div class="orb-core">
+                            <i class="fas fa-bolt"></i>
+                            <span>Performance</span>
+                        </div>
+                        <div class="orb-details">
+                            <div class="detail-point">15min Finality</div>
+                            <div class="detail-point">1000+ TPS</div>
+                            <div class="detail-point">Auto-Recovery</div>
+                        </div>
+                    </div>
+
+                    <div class="feature-orb innovation-orb" data-feature="innovation">
+                        <div class="orb-glow innovation-glow"></div>
+                        <div class="orb-core">
+                            <i class="fas fa-atom"></i>
+                            <span>Innovation</span>
+                        </div>
+                        <div class="orb-details">
+                            <div class="detail-point">SP1-Helios Integration</div>
+                            <div class="detail-point">Real-time Tracking</div>
+                            <div class="detail-point">Universal Wallets</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Tech Elements -->
+                    <div class="tech-constellation">
+                        <div class="tech-element" data-tech="zk-snark" style="--orbit-radius: 280px; --orbit-speed: 45s;">
+                            <i class="fas fa-fingerprint"></i>
+                            <span>ZK-SNARK</span>
+                        </div>
+                        <div class="tech-element" data-tech="sp1-helios" style="--orbit-radius: 320px; --orbit-speed: 60s;">
+                            <i class="fas fa-microchip"></i>
+                            <span>SP1-Helios</span>
+                        </div>
+                        <div class="tech-element" data-tech="smart-contracts" style="--orbit-radius: 360px; --orbit-speed: 75s;">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Smart Contracts</span>
+                        </div>
+                        <div class="tech-element" data-tech="websocket" style="--orbit-radius: 300px; --orbit-speed: 50s;">
+                            <i class="fas fa-wifi"></i>
+                            <span>WebSocket</span>
+                        </div>
+                        <div class="tech-element" data-tech="merkle-proofs" style="--orbit-radius: 340px; --orbit-speed: 65s;">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Merkle Proofs</span>
+                        </div>
+                        <div class="tech-element" data-tech="consensus" style="--orbit-radius: 380px; --orbit-speed: 80s;">
+                            <i class="fas fa-handshake"></i>
+                            <span>PoS Consensus</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Connection Lines -->
+                    <div class="connection-network" id="connection-network"></div>
+                    
+                    <!-- Data Particles -->
+                    <div class="universe-particles" id="universe-particles"></div>
+                </div>
+
+                <!-- Feature Controls -->
+                <div class="feature-controls">
+                    <button class="feature-control-btn active" data-view="overview">
+                        <i class="fas fa-globe"></i>
+                        Overview
+                    </button>
+                    <button class="feature-control-btn" data-view="security">
+                        <i class="fas fa-shield-alt"></i>
+                        Security Focus
+                    </button>
+                    <button class="feature-control-btn" data-view="performance">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Performance
+                    </button>
+                    <button class="feature-control-btn" data-view="innovation">
+                        <i class="fas fa-atom"></i>
+                        Innovation
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Feature Comparison -->
+            <div class="feature-comparison">
+                <h3>Why ECBridge Stands Out</h3>
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <div class="comparison-feature">Feature</div>
+                        <div class="comparison-traditional">Traditional Bridges</div>
+                        <div class="comparison-ecbridge">ECBridge</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Trust Model</div>
+                        <div class="comparison-traditional"><i class="fas fa-times"></i> Requires validators</div>
+                        <div class="comparison-ecbridge"><i class="fas fa-check"></i> Fully trustless</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Security</div>
+                        <div class="comparison-traditional"><i class="fas fa-times"></i> Vulnerable to attacks</div>
+                        <div class="comparison-ecbridge"><i class="fas fa-check"></i> Cryptographically secure</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Finality Time</div>
+                        <div class="comparison-traditional"><i class="fas fa-minus"></i> Hours to days</div>
+                        <div class="comparison-ecbridge"><i class="fas fa-check"></i> ~15 minutes</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Decentralization</div>
+                        <div class="comparison-traditional"><i class="fas fa-times"></i> Centralized committees</div>
+                        <div class="comparison-ecbridge"><i class="fas fa-check"></i> Fully decentralized</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section id="technical" class="technical">
+        <div class="container">
+            <h2 class="section-title">Technical Implementation</h2>
+            <div class="tech-content">
+                <div class="tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <i class="fab fa-ethereum"></i>
+                            <span>Ethereum & Solidity</span>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fab fa-rust"></i>
+                            <span>Rust (SP1-Helios)</span>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fab fa-react"></i>
+                            <span>React & Next.js</span>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js Backend</span>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Zero-Knowledge Proofs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-flow">
+                    <h3>Transaction Flow</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Initiate Transfer</h4>
+                                <p>User deposits tokens into the Ethereum bridge contract</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Achieve Finality</h4>
+                                <p>Wait for Ethereum block finalization (~15 minutes)</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Generate Proof</h4>
+                                <p>Relayer creates Merkle Patricia Trie proof of deposit</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Verify on Citrea</h4>
+                                <p>SP1-Helios verifies proof against light client state</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Mint Tokens</h4>
+                                <p>Citrea contract mints wrapped tokens to recipient</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security">
+        <div class="container">
+            <h2 class="section-title">Security Architecture</h2>
+            <div class="security-grid">
+                <div class="security-layer">
+                    <div class="layer-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Cryptographic Layer</h3>
+                    <ul>
+                        <li>Zero-knowledge SNARK proofs for state verification</li>
+                        <li>Merkle Patricia Trie proofs for transaction inclusion</li>
+                        <li>BLS signature verification for consensus</li>
+                    </ul>
+                </div>
+                <div class="security-layer">
+                    <div class="layer-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Smart Contract Layer</h3>
+                    <ul>
+                        <li>Reentrancy guards on all external functions</li>
+                        <li>Nonce-based replay attack prevention</li>
+                        <li>Comprehensive input validation</li>
+                    </ul>
+                </div>
+                <div class="security-layer">
+                    <div class="layer-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Infrastructure Layer</h3>
+                    <ul>
+                        <li>Redundant relayer services with failover</li>
+                        <li>Comprehensive error handling and recovery</li>
+                        <li>Real-time monitoring and alerting</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="security-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Attack Resistance</h4>
+                        <p>Immune to 51% attacks through cryptographic verification</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-lock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>No Custody Risk</h4>
+                        <p>Funds locked in smart contracts, not held by validators</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Full Transparency</h4>
+                        <p>All operations verifiable on-chain with open-source code</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Live Demo</h2>
+            <div class="demo-container">
+                <div class="demo-mockup">
+                    <div class="browser-bar">
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="browser-url">ecbridge.app</div>
+                    </div>
+                    <div class="demo-screen">
+                        <div class="demo-interface">
+                            <h3>Bridge Interface</h3>
+                            <div class="bridge-form">
+                                <div class="form-group">
+                                    <label>From</label>
+                                    <div class="chain-select">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='none'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23627EEA'/%3E%3Cpath fill='white' d='M16 4v8.9l7.5 3.3L16 4z M16 4l-7.5 12.2L16 12.9V4zm0 17.7v6.3l7.5-10.6L16 21.7zm0 0L8.5 17.4 16 27.9v-6.2zm0-4.8l7.5-3.3L16 10v6.9zm-7.5-3.3L16 10v6.9l-7.5-3.3z'/%3E%3C/g%3E%3C/svg%3E" alt="ETH">
+                                        <span>Ethereum</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>To</label>
+                                    <div class="chain-select">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FF6B00'/%3E%3Cpath fill='white' d='M16 8c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 2c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6z'/%3E%3C/svg%3E" alt="Citrea">
+                                        <span>Citrea</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Amount</label>
+                                    <input type="text" placeholder="0.0" class="amount-input">
+                                </div>
+                                <button class="bridge-button">Bridge Tokens</button>
+                            </div>
+                            <div class="transaction-status">
+                                <h4>Transaction Status</h4>
+                                <div class="status-timeline">
+                                    <div class="status-step active">
+                                        <div class="step-dot"></div>
+                                        <span>Initiated</span>
+                                    </div>
+                                    <div class="status-step active">
+                                        <div class="step-dot"></div>
+                                        <span>Confirming</span>
+                                    </div>
+                                    <div class="status-step">
+                                        <div class="step-dot"></div>
+                                        <span>Generating Proof</span>
+                                    </div>
+                                    <div class="status-step">
+                                        <div class="step-dot"></div>
+                                        <span>Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-features">
+                    <h3>Try It Yourself</h3>
+                    <p>Experience the future of cross-chain transfers with our live testnet deployment.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-wallet"></i>
+                            <span>Connect any Web3 wallet</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Bridge ETH or ERC20 tokens</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Real-time status updates</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-history"></i>
+                            <span>Full transaction history</span>
+                        </div>
+                    </div>
+                    <a href="https://ecbridge-app.vercel.app" class="btn btn-primary" target="_blank">Launch Demo App</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Burak Muammer Yıldız</h3>
+                    <p class="member-role">Developer</p>
+                    <p class="member-bio">Specializing in smart contract development and zero-knowledge proof implementations.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Tufan Özkan</h3>
+                    <p class="member-role">Developer</p>
+                    <p class="member-bio">Focused on backend infrastructure and cross-chain communication protocols.</p>
+                </div>
+                <div class="team-member supervisor">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Dr. Ayşe Nur Birtürk</h3>
+                    <p class="member-role">Supervisor</p>
+                    <p class="member-bio">Providing guidance on various concepts and overseeing project development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 5 L40 15 L40 35 L25 45 L10 35 L10 15 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M25 15 L32 20 L32 30 L25 35 L18 30 L18 20 Z" fill="currentColor" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <h3>ECBridge</h3>
+                    <p>Bridging the future of decentralized finance</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">GitHub Repository</a></li>
+                        <li><a href="#">Technical Paper</a></li>
+                        <li><a href="#">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                    <h4>METU Computer Engineering</h4>
+                    <p>2025 Graduation Project</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ECBridge. All rights reserved. | METU Computer Engineering</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
